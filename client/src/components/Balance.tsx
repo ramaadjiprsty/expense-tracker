@@ -2,9 +2,9 @@ import { useGlobalContext } from "../context/GlobalState"
 import { formatToRupiah } from "../utils/formatters"
 
 export const Balance = () => {
-    const { transaction } = useGlobalContext();
+    const { transactions } = useGlobalContext();
 
-    const amounts = transaction.map((transaction) => transaction.amount)
+    const amounts = transactions.map((transaction) => transaction.amount)
     const total = amounts.reduce((acc, item) => (acc += item), 0);
 
     return (

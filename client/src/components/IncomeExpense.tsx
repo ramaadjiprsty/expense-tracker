@@ -3,9 +3,9 @@ import { useGlobalContext } from "../context/GlobalState"
 import { formatToRupiah } from "../utils/formatters"
 
 export const IncomeExpenses = () => {
-    const { transaction } = useGlobalContext();
+    const { transactions } = useGlobalContext();
 
-    const amounts = transaction.map((transaction) => transaction.amount)
+    const amounts = transactions.map((transaction) => transaction.amount)
 
     const income = amounts
     .filter((item) => item > 0)

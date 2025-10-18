@@ -4,8 +4,16 @@ import { Balance } from './components/Balance';
 import { IncomeExpenses } from './components/IncomeExpense';
 import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
+import { useGlobalContext } from './context/GlobalState';
+import { useEffect } from 'react';
 
 function App() {
+  const { getTransaction } = useGlobalContext();
+
+  useEffect(() => {
+    getTransaction()
+  }, [])
+
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-xl w-full max-w-4xl m-4">
